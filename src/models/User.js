@@ -5,6 +5,7 @@ const UserSchema = new mongoose.Schema({
   avatar_url: String,
   profission: String,
   servicos: [String],
+  contatos: [String],
 });
 
 module.exports = mongoose.model("User", UserSchema);
