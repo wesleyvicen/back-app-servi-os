@@ -13,6 +13,6 @@ module.exports = {
       name,
       avatar_url,
     });
-    return response.json(profession);
+    return res.json(profession);
   },
 };
