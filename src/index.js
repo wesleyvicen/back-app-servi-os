@@ -2,15 +2,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const server = express();
-const port = 3000;
+const cors = require("cors");
 
 mongoose.connect(
   "mongodb+srv://wesley:w99441494@cluster0-wwxxt.mongodb.net/servicos?retryWrites=true&w=majority",
   { useUnifiedTopology: true, useNewUrlParser: true }
 );
+server.use(cors());
 server.use(express.json());
-server.use(routes);
 
-server.listen(port, () =>
-  console.log(`Example app listening at http://localhost:${port}`)
-);
+server.use(routes);
+server.listen(3000);
