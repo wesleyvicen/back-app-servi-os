@@ -9,7 +9,7 @@ module.exports = {
 
   async read(req, res) {
     const { name } = req.params;
-    const resul = await Profession.findOne({ name });
+    const resul = await Profession.find({ name });
 
     return res.json(resul === null ? {} : resul);
   },
