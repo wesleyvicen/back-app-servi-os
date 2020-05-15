@@ -10,7 +10,7 @@ routes.post("/profession", ProfessionController.store);
 routes.delete("/profession/:name", ProfessionController.delete);
 
 routes.get("/user", UserController.index);
-routes.get("/user/:name", UserController.read);
+routes.get("/user/:profission", UserController.read);
 routes.post("/user", UserController.store);
 
 module.exports = routes;
