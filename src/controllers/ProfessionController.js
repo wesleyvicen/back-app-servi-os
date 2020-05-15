@@ -7,6 +7,13 @@ module.exports = {
     return res.json(profession);
   },
 
+  async read(req, res) {
+    const { name } = req.params;
+    const resul = await Profession.findOne({ name });
+
+    return res.json(resul === null ? {} : resul);
+  },
+
   async store(req, res) {
     const { name, avatar_url } = req.body;
     const profession = await Profession.create({
@@ -14,5 +21,11 @@ module.exports = {
       avatar_url,
     });
     return res.json(profession);
+  },
+
+  async delete(req, res) {
+    const { name } = req.params;
+    await Profession.deleteOne({ name });
+    return res.json();
   },
 };
